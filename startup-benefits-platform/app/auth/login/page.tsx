@@ -20,7 +20,7 @@ export default function LoginPage() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Validation
+
         const newErrors: Record<string, string> = {};
         if (!formData.email) {
             newErrors.email = 'Email is required';
@@ -73,7 +73,7 @@ export default function LoginPage() {
 
     return (
         <div className="min-h-screen flex">
-            {/* Left Side - Form */}
+         
             <div className="flex-1 flex items-center justify-center px-6 py-12 bg-white">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -81,7 +81,7 @@ export default function LoginPage() {
                     transition={{ duration: 0.6 }}
                     className="w-full max-w-md"
                 >
-                    {/* Logo */}
+               
                     <Link href="/">
                         <motion.div
                             whileHover={{ scale: 1.05 }}
@@ -90,7 +90,7 @@ export default function LoginPage() {
                         </motion.div>
                     </Link>
 
-                    {/* Header */}
+                 
                     <div className="mb-8">
                         <h1 className="text-4xl font-display font-bold text-neutral-900 mb-2">
                             Welcome back
@@ -100,7 +100,7 @@ export default function LoginPage() {
                         </p>
                     </div>
 
-                    {/* Social Login */}
+                
                     <div className="space-y-3 mb-6">
                         <motion.button
                             whileHover={{ scale: 1.02 }}
@@ -144,7 +144,7 @@ export default function LoginPage() {
                         </motion.button>
                     </div>
 
-                    {/* Divider */}
+             
                     <div className="relative mb-6">
                         <div className="absolute inset-0 flex items-center">
                             <div className="w-full border-t border-neutral-200"></div>
@@ -156,7 +156,7 @@ export default function LoginPage() {
                         </div>
                     </div>
 
-                    {/* Form */}
+                
                     <form onSubmit={handleSubmit} className="space-y-4">
                         <Input
                             type="email"
@@ -206,7 +206,7 @@ export default function LoginPage() {
                         </Button>
                     </form>
 
-                    {/* Footer */}
+              
                     <p className="mt-6 text-center text-sm text-neutral-600">
                         Don't have an account?{' '}
                         <Link
@@ -219,9 +219,9 @@ export default function LoginPage() {
                 </motion.div>
             </div>
 
-            {/* Right Side - Visual */}
+           
             <div className="hidden lg:flex flex-1 bg-gradient-to-br from-primary-600 via-purple-600 to-pink-600 items-center justify-center p-12 relative overflow-hidden">
-                {/* Decorative elements */}
+        
                 <div className="absolute inset-0 bg-gradient-mesh opacity-30"></div>
 
                 <motion.div
@@ -246,7 +246,7 @@ export default function LoginPage() {
                         </p>
                     </div>
 
-                    {/* Stats */}
+              
                     <div className="grid grid-cols-3 gap-6">
                         {[
                             { label: 'Active Deals', value: '50+' },
@@ -266,7 +266,7 @@ export default function LoginPage() {
                         ))}
                     </div>
 
-                    {/* Testimonial */}
+               
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

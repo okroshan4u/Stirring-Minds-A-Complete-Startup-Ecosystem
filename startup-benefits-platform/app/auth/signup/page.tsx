@@ -12,17 +12,17 @@ export default function SignupPage() {
     const router = useRouter();
     const [step, setStep] = useState(1);
     const [formData, setFormData] = useState({
-        // Step 1: Personal Info
+      
         name: '',
         email: '',
         password: '',
         confirmPassword: '',
-        // Step 2: Company Info
+   
         companyName: '',
         companyWebsite: '',
         founded: '',
         teamSize: '',
-        // Step 3: Eligibility
+      
         funding: '',
         isIncorporated: false,
         hasAccelerator: false,
@@ -103,14 +103,14 @@ export default function SignupPage() {
                 return
             }
 
-            // Save real auth
+        
             localStorage.setItem("sb_token", data.token)
             localStorage.setItem("sb_user", JSON.stringify(data.user))
 
-            // Tell navbar to update
+      
             window.dispatchEvent(new Event("authChanged"))
 
-            // Go to dashboard
+          
             router.push("/dashboard")
 
         } catch (err) {
@@ -132,7 +132,7 @@ export default function SignupPage() {
             [name]: type === 'checkbox' ? checked : value,
         }));
 
-        // Clear error when user starts typing
+      
         if (errors[name]) {
             setErrors((prev) => ({ ...prev, [name]: '' }));
         }
@@ -140,9 +140,9 @@ export default function SignupPage() {
 
     return (
         <div className="min-h-screen flex">
-            {/* Left Side - Visual */}
+           
             <div className="hidden lg:flex flex-1 bg-gradient-to-br from-primary-600 via-purple-600 to-pink-600 items-center justify-center p-12 relative overflow-hidden">
-                {/* Decorative elements */}
+             
                 <div className="absolute inset-0 bg-gradient-mesh opacity-30"></div>
 
                 <motion.div
@@ -151,7 +151,7 @@ export default function SignupPage() {
                     transition={{ delay: 0.2, duration: 0.8 }}
                     className="relative z-10 text-white max-w-lg"
                 >
-                    {/* Progress Steps */}
+                 
                     <div className="mb-12">
                         <h3 className="text-sm font-semibold mb-4 text-white/70">
                             YOUR PROGRESS
@@ -175,7 +175,7 @@ export default function SignupPage() {
                                             : 'bg-white/10 text-white border-white/30'
                                             }`}
                                     >
-                                        {s.completed ? '✓' : s.num}
+                                        {s.completed ? '✔' : s.num}
                                     </div>
                                     <div>
                                         <div className="font-semibold">{s.label}</div>
@@ -188,7 +188,6 @@ export default function SignupPage() {
                         </div>
                     </div>
 
-                    {/* Benefits */}
                     <div className="space-y-4">
                         {[
                             '🎁 Access to 50+ exclusive deals',
@@ -221,7 +220,7 @@ export default function SignupPage() {
                 </motion.div>
             </div>
 
-            {/* Right Side - Form */}
+         
             <div className="flex-1 flex items-center justify-center px-6 py-12 bg-white overflow-y-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -229,7 +228,7 @@ export default function SignupPage() {
                     transition={{ duration: 0.6 }}
                     className="w-full max-w-md"
                 >
-                    {/* Logo */}
+               
                     <Link href="/">
                         <motion.div
                             whileHover={{ scale: 1.05 }}
@@ -244,7 +243,7 @@ export default function SignupPage() {
                         </motion.div>
                     </Link>
 
-                    {/* Progress bar - mobile */}
+                    
                     <div className="lg:hidden mb-8">
                         <div className="flex gap-2">
                             {[1, 2, 3].map((s) => (
@@ -260,7 +259,6 @@ export default function SignupPage() {
                         </p>
                     </div>
 
-                    {/* Header */}
                     <div className="mb-8">
                         <h1 className="text-4xl font-display font-bold text-neutral-900 mb-2">
                             {step === 1 && 'Create your account'}
@@ -274,7 +272,7 @@ export default function SignupPage() {
                         </p>
                     </div>
 
-                    {/* Step 1: Account Details */}
+               
                     {step === 1 && (
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
@@ -335,7 +333,7 @@ export default function SignupPage() {
                                 Continue
                             </Button>
 
-                            {/* Social signup */}
+                            
                             <div className="relative my-6">
                                 <div className="absolute inset-0 flex items-center">
                                     <div className="w-full border-t border-neutral-200"></div>
@@ -396,7 +394,7 @@ export default function SignupPage() {
                         </motion.div>
                     )}
 
-                    {/* Step 2: Company Info */}
+                    
                     {step === 2 && (
                         <motion.div
                             initial={{ opacity: 0, x: 20 }}
@@ -482,7 +480,7 @@ export default function SignupPage() {
                         </motion.div>
                     )}
 
-                    {/* Step 3: Eligibility */}
+                
                     {step === 3 && (
                         <motion.form
                             onSubmit={handleSubmit}
@@ -613,7 +611,7 @@ export default function SignupPage() {
                         </motion.form>
                     )}
 
-                    {/* Footer */}
+             
                     <p className="mt-6 text-center text-sm text-neutral-600">
                         Already have an account?{' '}
                         <Link

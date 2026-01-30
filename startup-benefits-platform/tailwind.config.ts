@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Premium color palette - editorial luxury meets modern SaaS
+       
         primary: {
           50: '#faf5ff',
           100: '#f3e8ff',

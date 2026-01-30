@@ -55,7 +55,7 @@ export default function Navigation() {
         >
             <div className="max-w-7xl mx-auto px-6">
                 <div className="flex items-center justify-between h-20">
-                    {/* Logo */}
+
                     <Link href="/">
                         <motion.div
                             whileHover={{ scale: 1.05 }}
@@ -71,7 +71,7 @@ export default function Navigation() {
                         </motion.div>
                     </Link>
 
-                    {/* Desktop Navigation */}
+
                     <div className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
                             <Link key={link.href} href={link.href}>
@@ -97,7 +97,6 @@ export default function Navigation() {
                         ))}
                     </div>
 
-                    {/* Auth Buttons */}
                     <div className="hidden md:flex items-center gap-4">
                         {user ? (
                             <div className="flex items-center gap-4">
@@ -135,7 +134,7 @@ export default function Navigation() {
 
 
 
-                    {/* Mobile Menu Button */}
+
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="md:hidden p-2 text-neutral-600 hover:text-neutral-900"
@@ -166,7 +165,7 @@ export default function Navigation() {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
+
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div

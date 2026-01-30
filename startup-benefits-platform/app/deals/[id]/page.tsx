@@ -43,7 +43,7 @@ export default function DealDetailPage() {
       setClaimed(true);
       setShowSuccess(true);
 
-      // Hide success message and redirect after animation
+
       setTimeout(() => {
         router.push('/dashboard');
       }, 2000);
@@ -76,7 +76,7 @@ export default function DealDetailPage() {
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 bg-gradient-to-br from-neutral-50 via-purple-50/20 to-pink-50/20">
       <div className="max-w-5xl mx-auto">
-        {/* Back button */}
+
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -100,14 +100,13 @@ export default function DealDetailPage() {
           Back to deals
         </motion.button>
 
-        {/* Main content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <Card className="p-8 md:p-12">
-            {/* Header */}
+
             <div className="flex flex-col md:flex-row gap-8 mb-8 pb-8 border-b border-neutral-200">
               <motion.div
                 whileHover={{ rotate: [0, -5, 5, -5, 0] }}
@@ -115,11 +114,7 @@ export default function DealDetailPage() {
                 className="flex-shrink-0"
               >
                 <div className="w-24 h-24 rounded-2xl overflow-hidden border-2 border-neutral-200 bg-neutral-50">
-                  {/* <img
-                    src={deal.partner.logo}
-                    alt={deal.partner.name}
-                    className="w-full h-full object-cover"
-                  /> */}
+
                 </div>
               </motion.div>
 
@@ -152,7 +147,7 @@ export default function DealDetailPage() {
                 </div>
               </div>
 
-              {/* Value highlight */}
+
               <div className="bg-gradient-to-br from-primary-50 to-purple-50 rounded-2xl p-8 mb-8">
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div>
@@ -174,40 +169,6 @@ export default function DealDetailPage() {
                 </div>
               </div>
 
-              {/* Features */}
-              {/* <div className="mb-8">
-                <h2 className="text-2xl font-bold text-neutral-900 mb-4">
-                  What's Included
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {deal.features.map((feature, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-start gap-3"
-                    >
-                      <svg
-                        className="w-6 h-6 text-primary-600 flex-shrink-0 mt-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span className="text-neutral-700">{feature}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div> */}
-
-              {/* Eligibility */}
               {deal.eligibility && (
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold text-neutral-900 mb-4">
@@ -246,9 +207,8 @@ export default function DealDetailPage() {
                   </div>
                 </div>
               )}
-
             </div>
-            {/* Partner info */}
+
             <div className="mb-8 p-6 bg-neutral-50 rounded-xl">
               <h3 className="text-lg font-bold text-neutral-900 mb-2">
                 About {deal.partner.name}
@@ -257,8 +217,6 @@ export default function DealDetailPage() {
                 Partner: {deal.partner.name}
               </p>
             </div>
-
-            {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 onClick={handleClaim}
@@ -274,12 +232,12 @@ export default function DealDetailPage() {
                     : "Claim This Deal"
                 }
               </Button>
-         
+
             </div>
           </Card>
         </motion.div>
 
-        {/* Success modal */}
+
         <AnimatePresence>
           {showSuccess && (
             <motion.div

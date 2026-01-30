@@ -1,5 +1,3 @@
-// Type definitions for the Startup Benefits Platform
-
 export type DealCategory =
   | 'infrastructure'
   | 'analytics'
@@ -24,7 +22,7 @@ export interface Partner {
 
 export interface EligibilityCriteria {
   minFunding?: number;
-  maxAge?: number; // company age in months
+  maxAge?: number; 
   requirements?: string[];
 }
 

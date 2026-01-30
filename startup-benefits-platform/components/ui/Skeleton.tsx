@@ -29,7 +29,7 @@ export default function Skeleton({
   );
 }
 
-// Skeleton card for deal loading states
+
 export function SkeletonDealCard() {
   return (
     <div className="bg-white rounded-2xl border border-neutral-200 p-6 space-y-4">

@@ -16,7 +16,7 @@ export default function DashboardPage() {
     const [user, setUser] = useState<any>(null)
     const router = useRouter()
 
-    // Load user + token
+
     useEffect(() => {
         const user = localStorage.getItem("sb_user")
         const token = localStorage.getItem("sb_token")
@@ -29,7 +29,7 @@ export default function DashboardPage() {
         setUser(JSON.parse(user))
     }, [])
 
-    // Fetch claims
+
     const fetchData = async () => {
         try {
             const res = await api.getMyClaims()
@@ -45,7 +45,7 @@ export default function DashboardPage() {
         if (user) fetchData()
     }, [user])
 
-    // Loading state
+  
     if (!user || loading) {
         return (
             <div className="min-h-screen flex items-center justify-center">
@@ -54,7 +54,7 @@ export default function DashboardPage() {
         )
     }
 
-    // ✅ Derived values AFTER loading
+ 
     const filteredDeals =
         selectedStatus === "all"
             ? claimedDeals
@@ -70,7 +70,7 @@ export default function DashboardPage() {
     return (
         <div className="min-h-screen pt-32 pb-24 px-6 bg-gradient-to-br from-neutral-50 via-purple-50/20 to-pink-50/20">
             <div className="max-w-7xl mx-auto">
-                {/* Header */}
+         
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export default function DashboardPage() {
                     </p>
                 </motion.div>
 
-                {/* Stats */}
+                
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -126,7 +126,7 @@ export default function DashboardPage() {
                     ))}
                 </motion.div>
 
-                {/* Filters */}
+                
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -156,7 +156,7 @@ export default function DashboardPage() {
                     </div>
                 </motion.div>
 
-                {/* Claimed Deals List */}
+       
                 <AnimatePresence mode="wait">
                     {filteredDeals.length === 0 ? (
                         <motion.div
@@ -205,15 +205,11 @@ export default function DashboardPage() {
                                             {/* Logo */}
                                             <div className="flex-shrink-0">
                                                 <div className="w-20 h-20 rounded-xl overflow-hidden border-2 border-neutral-200 bg-neutral-50">
-                                                    {/* <img
-                                                        src={claimedDeal.deal.partner.logo}
-                                                        alt={claimedDeal.deal.partner.name}
-                                                        className="w-full h-full object-cover"
-                                                    /> */}
+
                                                 </div>
                                             </div>
 
-                                            {/* Content */}
+
                                             <div className="flex-1 min-w-0">
                                                 <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
                                                     <div>
@@ -249,7 +245,7 @@ export default function DashboardPage() {
                                                     {claimedDeal.deal.description}
                                                 </p>
 
-                                                {/* Status message */}
+                                              
                                                 {claimedDeal.statusMessage && (
                                                     <motion.div
                                                         initial={{ opacity: 0, height: 0 }}
@@ -316,7 +312,7 @@ export default function DashboardPage() {
                                                     </motion.div>
                                                 )}
 
-                                                {/* Footer */}
+                                             
                                                 <div className="flex flex-wrap items-center justify-between gap-4 text-sm text-neutral-600">
                                                     <div className="flex items-center gap-4">
                                                         <span>

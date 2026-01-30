@@ -15,7 +15,7 @@ export default function Hero() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
+    
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -23,7 +23,7 @@ export default function Hero() {
     resize();
     window.addEventListener('resize', resize);
 
-    // Particle system for subtle background animation
+    
     const particles: Array<{
       x: number;
       y: number;
@@ -48,23 +48,23 @@ export default function Hero() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       particles.forEach((particle, index) => {
-        // Update position
+       
         particle.x += particle.speedX;
         particle.y += particle.speedY;
 
-        // Wrap around edges
+        
         if (particle.x < 0) particle.x = canvas.width;
         if (particle.x > canvas.width) particle.x = 0;
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
 
-        // Draw particle
+     
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(168, 85, 247, ${particle.opacity})`;
         ctx.fill();
 
-        // Draw connections
+     
         particles.slice(index + 1).forEach((otherParticle) => {
           const dx = particle.x - otherParticle.x;
           const dy = particle.y - otherParticle.y;
@@ -95,24 +95,24 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-neutral-50 via-purple-50/30 to-pink-50/30">
-      {/* Animated canvas background */}
+      
       <canvas
         ref={canvasRef}
         className="absolute inset-0 opacity-30"
         style={{ mixBlendMode: 'multiply' }}
       />
 
-      {/* Gradient mesh background */}
+     
       <div className="absolute inset-0 bg-gradient-mesh opacity-40" />
 
-      {/* Content */}
+   
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          {/* Announcement badge */}
+    
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -128,7 +128,7 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* Main headline */}
+        
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -157,7 +157,7 @@ export default function Hero() {
             in SaaS benefits
           </motion.h1>
 
-          {/* Subheadline */}
+   
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -168,7 +168,7 @@ export default function Hero() {
             design tools, get everything your startup needs to scale faster.
           </motion.p>
 
-          {/* CTA Buttons */}
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -200,7 +200,7 @@ export default function Hero() {
             </Link>
           </motion.div>
 
-          {/* Stats */}
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -229,7 +229,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

@@ -15,21 +15,21 @@ router.post("/:dealId", auth, async (req: any, res) => {
 
     const user = req.user
 
-    // 🔐 Locked deals require verification
+   
     if (deal.isLocked && !user.isVerified) {
       return res.status(403).json({
         message: "Verification required to claim this deal"
       })
     }
 
-    // 🧾 Verified-only deals
+  
     if (deal.requiresVerified && !user.isVerified) {
       return res.status(403).json({
         message: "Verification required"
       })
     }
 
-    // 💎 Premium-only deals
+  
     if (deal.requiresPremium && !user.isPremium) {
       return res.status(403).json({
         message: "Premium required"
@@ -60,7 +60,7 @@ router.post("/:dealId", auth, async (req: any, res) => {
 })
 
 
-// User dashboard
+
 router.get("/my", auth, async (req: any, res) => {
   const claims = await Claim.find({ user: req.user._id })
     .populate("deal")

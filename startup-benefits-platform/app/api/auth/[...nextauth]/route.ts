@@ -47,7 +47,7 @@ export const authOptions: NextAuthOptions = {
 
         if (!res.ok || !data.token) return null
 
-        // NextAuth user object
+        
         return {
           id: data.user._id,
           name: data.user.name,

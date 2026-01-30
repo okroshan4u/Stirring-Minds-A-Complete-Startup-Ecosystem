@@ -71,7 +71,7 @@ export default function DealsPage() {
   return (
     <div className="min-h-screen pt-32 pb-24 px-6 bg-gradient-to-br from-neutral-50 via-purple-50/20 to-pink-50/20">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+  
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -86,14 +86,14 @@ export default function DealsPage() {
           </p>
         </motion.div>
 
-        {/* Filters */}
+      
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mb-12 space-y-6"
         >
-          {/* Search */}
+
           <div className="relative">
             <Input
               type="text"
@@ -117,9 +117,9 @@ export default function DealsPage() {
             </svg>
           </div>
 
-          {/* Filter Pills */}
+      
           <div className="flex flex-col md:flex-row gap-6">
-            {/* Category Filter */}
+
             <div className="flex-1">
               <label className="block text-sm font-medium text-neutral-700 mb-3">
                 Category
@@ -142,7 +142,7 @@ export default function DealsPage() {
               </div>
             </div>
 
-            {/* Access Level Filter */}
+   
             <div className="md:w-64">
               <label className="block text-sm font-medium text-neutral-700 mb-3">
                 Access Level
@@ -167,7 +167,7 @@ export default function DealsPage() {
           </div>
         </motion.div>
 
-        {/* Results */}
+    
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
